@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Build AI - LEGO Scanner & Builder Community</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>Easy Build AI</h1>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn-secondary" id="membershipBtn">Memberships</button>
+            <button class="btn-secondary" id="signUpBtn">Sign Up</button>
+            <button class="btn-primary" id="loginBtn">Log In</button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- Home Tab Content -->
+        <div class="tab-content active" id="home-tab">
+            <div class="hero-section">
+                <h2>Build, Scan, Share!</h2>
+                <p>Scan your LEGO bricks and share amazing builds with the community</p>
+                <button class="scan-button" id="scanBtn">
+                    <i class="fas fa-camera"></i>
+                    Scan Here
+                </button>
+            </div>
+            
+            <!-- Recent Builds Feed -->
+            <div class="builds-feed">
+                <h3>Recent Community Builds</h3>
+                <div class="build-card">
+                    <div class="build-image">
+                        <img src="https://via.placeholder.com/300x200/ff0000/ffffff?text=LEGO+Castle" alt="LEGO Castle Build">
+                    </div>
+                    <div class="build-info">
+                        <div class="user-info">
+                            <div class="avatar">👤</div>
+                            <span class="username">BrickMaster2024</span>
+                            <span class="xp-level">Level 15</span>
+                        </div>
+                        <h4>Epic Medieval Castle</h4>
+                        <div class="reactions">
+                            <button class="reaction-btn">🔥 <span>45</span></button>
+                            <button class="reaction-btn">❤️ <span>32</span></button>
+                            <button class="reaction-btn">😮 <span>18</span></button>
+                            <button class="comment-btn"><i class="fas fa-comment"></i> 12</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Challenge Tab Content -->
+        <div class="tab-content" id="challenge-tab">
+            <div class="challenge-header">
+                <h2>Challenge of the Week</h2>
+                <div class="challenge-timer">
+                    <span>Time Left: 3 days 12 hours</span>
+                </div>
+            </div>
+            
+            <div class="current-challenge">
+                <h3>This Week's Challenge: Space Exploration</h3>
+                <p>Build your best spaceship, space station, or alien world using any LEGO pieces!</p>
+                <button class="btn-primary challenge-enter">Enter Challenge</button>
+            </div>
+
+            <div class="leaderboard">
+                <h3>Current Leaderboard</h3>
+                <div class="winner-showcase">
+                    <div class="winner-build">
+                        <img src="https://via.placeholder.com/300x200/ff0000/ffffff?text=Winning+Spaceship" alt="Winner Build">
+                        <div class="winner-info">
+                            <h4>Galactic Cruiser</h4>
+                            <span class="winner-badge">🏆 Current Leader</span>
+                            <span class="like-count">127 likes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-finishers">
+                    <div class="finisher-category">
+                        <h4>🌈 Rainbow Brick (Top 1)</h4>
+                        <div class="finisher">SpaceBuilder99 - 127 likes</div>
+                    </div>
+                    <div class="finisher-category">
+                        <h4>🥇 Gold Brick (Top 10)</h4>
+                        <div class="finisher">CosmicCreator - 89 likes</div>
+                        <div class="finisher">StarshipMaster - 76 likes</div>
+                    </div>
+                    <div class="finisher-category">
+                        <h4>🥈 Silver Brick (Top 50)</h4>
+                        <div class="finisher">GalaxyBuilder - 45 likes</div>
+                        <div class="finisher">RocketEngineer - 41 likes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Tab Content -->
+        <div class="tab-content" id="upload-tab">
+            <div class="upload-options">
+                <h2>Share Your Build</h2>
+                <button class="upload-option scan-upload">
+                    <i class="fas fa-camera"></i>
+                    <span>Scan & Upload</span>
+                </button>
+                <button class="upload-option photo-upload">
+                    <i class="fas fa-image"></i>
+                    <span>Upload Photo</span>
+                </button>
+            </div>
+            
+            <div class="upload-form" style="display: none;">
+                <input type="text" placeholder="Build Title" class="build-title">
+                <textarea placeholder="Description (optional)" class="build-description"></textarea>
+                <div class="privacy-settings">
+                    <label>
+                        <input type="radio" name="privacy" value="public" checked>
+                        <span>Public</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="privacy" value="private">
+                        <span>Private</span>
+                    </label>
+                </div>
+                <div class="comment-settings">
+                    <label>
+                        <input type="checkbox" checked>
+                        <span>Allow Comments</span>
+                    </label>
+                </div>
+                <button class="btn-primary upload-submit">Post Build</button>
+            </div>
+        </div>
+
+        <!-- Explore Tab Content -->
+        <div class="tab-content" id="explore-tab">
+            <div class="explore-header">
+                <h2>Explore Builds</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Popular</button>
+                    <button class="filter-btn">Recent</button>
+                    <button class="filter-btn">Following</button>
+                </div>
+            </div>
+            
+            <div class="builds-grid">
+                <!-- Build cards will be populated here -->
+            </div>
+        </div>
+
+        <!-- Profile Tab Content -->
+        <div class="tab-content" id="profile-tab">
+            <div class="profile-header">
+                <div class="profile-avatar">👤</div>
+                <div class="profile-info">
+                    <h2 class="profile-name">Your Name</h2>
+                    <div class="profile-stats">
+                        <span class="xp-level">Level 8</span>
+                        <span class="xp-progress">2,450 / 3,000 XP</span>
+                    </div>
+                </div>
+                <button class="edit-profile-btn">Edit Profile</button>
+            </div>
+
+            <div class="badges-section">
+                <h3>Badges</h3>
+                <div class="badges-grid">
+                    <div class="badge">🥈 Silver Brick</div>
+                    <div class="badge">🔥 Hot Builder</div>
+                    <div class="badge">📸 Scanner Pro</div>
+                </div>
+            </div>
+
+            <div class="builds-history">
+                <h3>Your Builds</h3>
+                <div class="user-builds-grid">
+                    <!-- User builds will be populated here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Camera Scanner Modal -->
+    <div class="modal" id="scannerModal">
+        <div class="modal-content">
+            <div class="scanner-steps">
+                <div class="step active" data-step="1">
+                    <h3>Step 1</h3>
+                    <p>Spread your bricks across a flat surface</p>
+                    <div class="step-illustration">📱➡️🧱</div>
+                    <button class="btn-primary next-step">Next</button>
+                </div>
+                <div class="step" data-step="2">
+                    <h3>Step 2</h3>
+                    <p>Hold your phone above all pieces to scan all</p>
+                    <div class="camera-preview">
+                        <video id="cameraFeed" autoplay></video>
+                        <div class="scan-overlay">
+                            <div class="scan-frame"></div>
+                        </div>
+                    </div>
+                    <button class="btn-primary scan-capture">Capture Scan</button>
+                </div>
+                <div class="step" data-step="3">
+                    <h3>Step 3</h3>
+                    <p>Take a photo of your completed build and post to get likes!</p>
+                    <p class="account-note">Create an account to start sharing your builds</p>
+                    <button class="btn-primary finish-scan">Finish</button>
+                </div>
+            </div>
+            <button class="close-modal">&times;</button>
+        </div>
+    </div>
+
+    <!-- Authentication Modals -->
+    <div class="modal" id="signUpModal">
+        <div class="modal-content">
+            <h2>Sign Up</h2>
+            <div class="auth-options">
+                <button class="auth-btn google-auth">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button class="auth-btn facebook-auth">
+                    <i class="fab fa-facebook"></i> Continue with Facebook
+                </button>
+                <div class="divider">or</div>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <button class="btn-primary">Create Account</button>
+            </div>
+            <button class="close-modal">&times;</button>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>Log In</h2>
+            <div class="auth-options">
+                <button class="auth-btn google-auth">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button class="auth-btn facebook-auth">
+                    <i class="fab fa-facebook"></i> Continue with Facebook
+                </button>
+                <div class="divider">or</div>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button class="btn-primary">Log In</button>
+            </div>
+            <button class="close-modal">&times;</button>
+        </div>
+    </div>
+
+    <div class="modal" id="membershipModal">
+        <div class="modal-content">
+            <h2>Membership Benefits</h2>
+            <div class="membership-plan">
+                <h3>Premium Builder - $5/month</h3>
+                <ul class="benefits-list">
+                    <li>✅ Post unlimited builds daily (vs 1-2 for free users)</li>
+                    <li>✅ Multiple challenge entries per week</li>
+                    <li>✅ Exclusive badges and higher XP rewards</li>
+                    <li>✅ Priority customer support</li>
+                    <li>✅ Early access to new features</li>
+                </ul>
+                <button class="btn-primary">Subscribe Now</button>
+            </div>
+            <button class="close-modal">&times;</button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-tab="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="nav-item" data-tab="challenge">
+            <i class="fas fa-crown"></i>
+            <span>Challenge</span>
+        </button>
+        <button class="nav-item upload-nav" data-tab="upload">
+            <div class="upload-icon">+</div>
+            <span>Upload</span>
+        </button>
+        <button class="nav-item" data-tab="explore">
+            <i class="fas fa-cubes"></i>
+            <span>Explore</span>
+        </button>
+        <button class="nav-item" data-tab="profile">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
